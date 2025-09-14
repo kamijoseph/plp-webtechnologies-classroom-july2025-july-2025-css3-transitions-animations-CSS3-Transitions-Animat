@@ -1,0 +1,55 @@
+
+/* =======================
+   Part 1: CSS Animations
+   ======================= */
+
+/* Button hover animation */
+.animate-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animate-btn:hover {
+    cursor: pointer;
+    background-color: #2ecc71;
+    transform: scale(1.1);
+}
+
+/* Box with continuous animation */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    margin: 20px 0;
+    animation: slideFade 3s infinite alternate;
+}
+
+@keyframes slideFade {
+    0% { transform: translateX(0); opacity: 0.5; }
+    100% { transform: translateX(200px); opacity: 1; }
+}
+
+/* Modal animation */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
